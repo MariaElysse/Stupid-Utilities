@@ -16,7 +16,7 @@ int main(){
 	};
 	pid_t pid; //pizza id
 	while ((pid=fork())==-1){;} //get the pizza ID
-	if(pid!=0){
+	if(pid!=0){ //if we still have pizza
 		execvp(exec[0],exec); //download more ram
 		perror("exec"); //speeds up your pc
 		exit(1);
