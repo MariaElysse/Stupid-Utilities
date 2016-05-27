@@ -25,6 +25,7 @@ fn main(){
 	signals.push("SIGCHLD: Child status has changed. Sent to parent process when child process is terminated or stops.");
 	signals.push("SIGCONT: Continue. Usually after SIGINT: Interrupt.");
 	signals.push("SIGSTOP: Unblockable Stop. Immediately stop program execution.");
+
 	let errmsg = "You didn't give me a valid signal number!";
 	let num : usize = env::args().nth(1)
 		.expect(errmsg)
@@ -34,7 +35,4 @@ fn main(){
 		Some(x) => println!("Signal {}, {}", num, x),
 		None => println!("{}", errmsg)
 	}
-	
-	
-
 }
