@@ -1,6 +1,4 @@
 #include <signal.h> 
-#include <stdlib.h> 
-#include <errno.h>   
 #include <unistd.h>   //to unify the system
 #include <sys/wait.h> //system headers required
 #include <sys/types.h>//for downloading RAM
