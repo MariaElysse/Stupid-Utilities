@@ -1,5 +1,4 @@
 #!/bin/bash
-USER='nobody'
 LOG_FILE='/var/log/EasyDeploy.log'
 REPOS_FILE="$1"
 function usage {
@@ -51,6 +50,7 @@ while true
 do 
     while read -r repo  || [[ -n "$repo" ]] 
     do
+        cd "$repo"
         owner="$(stat -c %U .git/)"
         if [[ $? -ne 0 ]]; then
             echo "Folder is not a git repository"
