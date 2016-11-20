@@ -51,6 +51,7 @@ do
     while read -r repo  || [[ -n "$repo" ]] 
     do
         cd "$repo"
+        echo "$repo:"
         owner="$(stat -c %U .git/)"
         if [[ $? -ne 0 ]]; then
             echo "Folder is not a git repository"
@@ -59,7 +60,7 @@ do
             git_status="$(git status)"
             update=needs_update
             if [[ update -eq 0 ]]; then
-                echo "$repo:"
+                
                 sudo -u "$owner" "git" "pull"
                 if [[ ! $? ]]; then
                     echo "git-pull failed"
