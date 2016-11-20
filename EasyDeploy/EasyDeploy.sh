@@ -59,6 +59,7 @@ do
             git_status="$(git status)"
             update=needs_update
             if [[ update -eq 0 ]]; then
+                echo "$repo:"
                 sudo -u "$owner" "git" "pull"
                 if [[ ! $? ]]; then
                     echo "git-pull failed"
