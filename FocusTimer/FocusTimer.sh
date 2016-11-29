@@ -12,7 +12,7 @@ while true; do
 			echo $i
 			mins_rem="$(echo "(1500-(15*$i)) / 60 " | bc )"
 			secs_rem="$(echo "(1500-(15*$i)) % 60 " | bc )" 
-			echo "# $mins_rem:$secs_rem work remaining"
+			echo "# $mins_rem m, $secs_rem s work remaining"
 		done | zenity --auto-close --progress --no-cancel --text="You are working"
 	else 
 		notify-send "Take a break!"
@@ -25,7 +25,7 @@ while true; do
 			echo $i
 			mins_rem="$(echo "(300-(3*$i)) / 60 " | bc )"
 			secs_rem="$(echo "(300-(3*$i)) % 60 " | bc )" 
-			echo "# $mins_rem:$secs_rem break remaining" 
+			echo "# $mins_rem m, $secs_rem s break remaining" 
 		done | zenity --progress --auto-close --no-cancel --text="You are on a break"
 	fi
 done 
