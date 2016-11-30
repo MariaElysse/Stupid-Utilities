@@ -5,6 +5,7 @@ while true; do
 		play -q /usr/share/sounds/gnome/default/alerts/glass.ogg	
 		notify-send "Back to work!"
 		cp default.action_block /etc/privoxy/default.action
+		echo 'Working'
 		let time=5
 		service privoxy restart
 		for i in $(seq 1 100); do 
@@ -18,6 +19,7 @@ while true; do
 		notify-send "Take a break!"
 		play -q /usr/share/sounds/gnome/default/alerts/glass.ogg
 		cp default.action_noblock /etc/privoxy/default.action
+		echo 'Taking a break'
 		service privoxy restart
 		let time=25
 		for i in $(seq 1 100); do
