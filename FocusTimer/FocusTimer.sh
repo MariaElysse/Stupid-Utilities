@@ -2,7 +2,7 @@
 while true; do 
 
 	if [[ time -eq 25 ]]; then
-		mplayer -really-quiet /usr/share/sounds/gnome/default/alerts/glass.ogg
+		play -q /usr/share/sounds/gnome/default/alerts/glass.ogg	
 		notify-send "Back to work!"
 		cp default.action_block /etc/privoxy/default.action
 		let time=5
@@ -16,7 +16,7 @@ while true; do
 		done | zenity --auto-close --progress --no-cancel --text="You are working"
 	else 
 		notify-send "Take a break!"
-		mplayer -really-quiet /usr/share/sounds/gnome/default/alerts/glass.ogg
+		play -q /usr/share/sounds/gnome/default/alerts/glass.ogg
 		cp default.action_noblock /etc/privoxy/default.action
 		service privoxy restart
 		let time=25
